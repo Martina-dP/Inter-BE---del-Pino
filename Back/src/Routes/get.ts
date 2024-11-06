@@ -1,8 +1,0 @@
-import { Router } from "express";
-const router = Router();
-
-router.get("/", async (_req, res) => {
-    res.send("HOLA A TODOS");
-});
-
-export default router;
