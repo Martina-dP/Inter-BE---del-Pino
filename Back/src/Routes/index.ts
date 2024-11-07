@@ -20,20 +20,20 @@ import deleteLessons from "./Lesson-routes";
 
 const router = Router();
 
-router.use('/', getCourse);
-router.use('/course/:id', getCourseByID);
+router.use('/courses', getCourse);
+router.use('/courses/:courseId', getCourseByID);
 router.use('/courses', postCourse);
-router.use('/courses/:id', putCourse);
-router.use('/courses/:id', deleteCourse);
+router.use('/courses/:courseId', putCourse);
+router.use('/courses/:courseId', deleteCourse);
 
 router.use('/courses/:courseId/modules', getModules);
-router.use('/course/:courseId/modules/:moduleId', getModulesByID);
+router.use('/courses/:courseId/modules/:moduleId', getModulesByID);
 router.use('/courses/:courseId/modules', postModules);
 router.use('/courses/:courseId/modules/:moduleId', putModules);
 router.use('/courses/:courseId/modules/:moduleId', deleteModules);
 
 router.use('/courses/:courseId/modules/:moduleId/lessons', getLessons);
-router.use('/course/:courseId/modules/:moduleId/lessons/:lessonId', getLessonsByID);
+router.use('/courses/:courseId/modules/:moduleId/lessons/:lessonId', getLessonsByID);
 router.use('/courses/:courseId/modules/:moduleId/lessons', postLessons);
 router.use('/courses/:courseId/modules/:moduleId/lessons/:lessonId', putLessons);
 router.use('/courses/:courseId/modules/:moduleId/lessons/:lessonId', deleteLessons);

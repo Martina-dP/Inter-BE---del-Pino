@@ -1,16 +1,14 @@
 import express from 'express' 
 import SwaggerUi  from 'swagger-ui-express';
 import swaggerSpec from './data';
-import routerC from './Routes/Course-routes';
-import routerL from './Routes/Lesson-routes';
+import router from './Routes/index';
 import fs from 'fs/promises';
 
 const PORT = 3001;
 const server = express();
 server.use(express.json())
 
-server.use('/', routerC);
-server.use('/', routerL);
+server.use('/', router);
 
 server.use("/api-docs", SwaggerUi.serve, SwaggerUi.setup(swaggerSpec))
 
