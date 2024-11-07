@@ -6,11 +6,15 @@ export interface Course {
 }
 
 export interface Module {
+    id: number;
+    courseId: number;
     title : string;
     lessons : Lesson[];
 }
 
 export interface Lesson {
+    id: number,
+    moduleId: number,
     title : string;
     description : string;
     topics : string[];

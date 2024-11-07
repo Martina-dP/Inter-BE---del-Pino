@@ -1,4 +1,4 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
 import getCourse from "./Course-routes";
 import getCourseByID from "./Course-routes";

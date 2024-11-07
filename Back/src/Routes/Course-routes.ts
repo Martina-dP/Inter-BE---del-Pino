@@ -1,19 +1,19 @@
 import { Router} from "express";
-import { deleteCourseID, getAllCourses, getCourseID, newCourse, putCourseID } from "../Middel/coursesM";
+import { deleteCourseID, getAllCourses, getCourseID, newCourse, putCourseID } from "../Middleware/coursesM";
 
 const router: Router = Router();
 
 router.get("/", getAllCourses);
 /**
  * @swagger
- * /:
+ * /courses:
  *   get:
- *     summary: Obtiene todos los cursos
+ *     summary: Get all courses
  *     tags: 
  *       - Course
  *     responses:
  *       200:
- *         description: Lista de todos los cursos
+ *         description: " Successful request "
  *         content:
  *           application/json:
  *             schema:
@@ -26,9 +26,9 @@ router.get("/", getAllCourses);
 router.get("/:courseID", getCourseID);
 /**
  * @swagger
- * /{courseID}:
+ * /courses/{courseID}:
  *   get:
- *     summary: Obtiene un curso
+ *     summary: Get course by Id
  *     tags: 
  *       - Course
  *     parameters:
@@ -40,7 +40,12 @@ router.get("/:courseID", getCourseID);
  *           type: number
  *     responses:
  *       200:
- *         description: Curso obtenido con exito
+ *         description: " Successful request "
+ *         content:
+ *           application/json:
+ *             schema:
+ *                type: array
+ *                $ref: '#/components/schemas/Course'  
  *       404:
  *         description: Course not found
  *       500:
@@ -50,9 +55,9 @@ router.get("/:courseID", getCourseID);
 router.post("/", newCourse);
 /**
  * @swagger
- * /:
+ * /newCourse:
  *   post:
- *     summary: Crear un nuevo curso
+ *     summary: Add course
  *     tags: 
  *       - Course
  *     requestBody:
@@ -64,21 +69,21 @@ router.post("/", newCourse);
  *             $ref: '#/components/schemas/Course' 
  *     responses:
  *       201:
- *         description: "Curso creado exitosamente"
+ *         description: " Added successfully "
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Course'  
  *       500:
- *         description: "Error al crear el curso"
+ *         description: "Error updating course"
  */
 
 router.put("/:courseID", putCourseID);
 /**
  * @swagger
- * /{courseID}:
+ * /course/{courseID}:
  *   put:
- *     summary: Crear un nuevo curso
+ *     summary: Modify course
  *     tags: 
  *       - Course
  *     parameters:
@@ -95,7 +100,7 @@ router.put("/:courseID", putCourseID);
  *             $ref: '#/components/schemas/Course' 
  *     responses:
  *       201:
- *         description: "Curso modificado exitosamente"
+ *         description: " Modified successfully "
  *         content:
  *           application/json:
  *             schema:
@@ -107,7 +112,7 @@ router.put("/:courseID", putCourseID);
 router.delete("/:courseID", deleteCourseID);
 /**
  * @swagger
- * /{courseID}:
+ * /course/{courseID}:
  *   delete:
  *     summary: Delete course
  *     tags: 
@@ -119,13 +124,13 @@ router.delete("/:courseID", deleteCourseID);
  *         description: ID del curso que quiere borrar 
  *     responses:
  *       201:
- *         description: "Curso borrado exitosamente"
+ *         description: "Successfully removed"
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Course'  
  *       500:
- *         description: "Error al borrar el curso"
+ *         description: "Error deleting course"
  */
 
 export default router;

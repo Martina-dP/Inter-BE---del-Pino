@@ -25,6 +25,8 @@ const options: swaggerJSDoc.Options = {
             Module: {
                 type: 'object',
                 properties: {
+                    id: { type: 'integer', description: 'ID del modulo' },
+                    courseId: { type: 'integer', description: 'ID del curso' },
                     title: { type: 'string', description: 'Título del módulo' },
                     lessons: {
                         type: 'array',
