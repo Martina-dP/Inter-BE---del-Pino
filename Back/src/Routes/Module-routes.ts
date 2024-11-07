@@ -3,7 +3,7 @@ import { getAllModules } from "../Middleware/moduleM";
 
 const router = Router();
 
-router.get("/", getAllModules);
+router.get("/:courseId/modules", getAllModules);
 /**
  * @swagger
  * /course/{courseID}/modules:
@@ -31,7 +31,7 @@ router.get("/", getAllModules);
  *         description: Failed to fetch courses
  */
 
-router.get("/:moduleID" );
+router.get("/:courseId/modules/:moduleId" );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}:
@@ -64,7 +64,7 @@ router.get("/:moduleID" );
  *         description: " Failed to fetch courses "
  */
 
-router.post("/" );
+router.post("/:courseId/modules" );
 /**
  * @swagger
  * /course/{courseID}/modules:
@@ -99,7 +99,7 @@ router.post("/" );
  *         description:  " Failed to fetch courses "
  */
 
-router.put("/:moduleID" );
+router.put("/:courseId/modules/:moduleId" );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}:
@@ -139,7 +139,7 @@ router.put("/:moduleID" );
  *         description: " Failed to fetch courses "
  */
 
-router.delete("/:moduleID" );
+router.delete("/:courseId/modules/:moduleId" );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}:

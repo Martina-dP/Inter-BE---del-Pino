@@ -4,16 +4,8 @@
         "courseId": 1,
         "title": "HTML Basics",
         "lessons": [
-            {
-                "id": 1,
-                "title": "Understanding HTML Structure",
-                "description": "Learn about HTML tags and document structure"
-            },
-            {
-                "id": 2,
-                "title": "Working with Forms",
-                "description": "Create and style HTML forms"
-            }
+            { "id": 1, "title": "Understanding HTML Structure", "description": "Learn about HTML tags and document structure" },
+            { "id": 2, "title": "Working with Forms", "description": "Create and style HTML forms" }
         ]
     },
     {
@@ -21,11 +13,23 @@
         "courseId": 1,
         "title": "CSS Fundamentals",
         "lessons": [
-            {
-                "id": 3,
-                "title": "CSS Selectors and Properties",
-                "description": "Master CSS selectors and common properties"
-            }
+            { "id": 3, "title": "CSS Selectors and Properties", "description": "Master CSS selectors and common properties" }
+        ]
+    },
+    {
+        "id": 3,
+        "courseId": 2,
+        "title": "JavaScript Advanced Concepts",
+        "lessons": [
+            { "id": 4, "title": "Async JavaScript", "description": "Learn about async functions and promises" }
+        ]
+    },
+    {
+        "id": 4,
+        "courseId": 2,
+        "title": "Working with APIs",
+        "lessons": [
+            { "id": 5, "title": "API Basics", "description": "Understand how to work with APIs in JavaScript" }
         ]
     }
 ]

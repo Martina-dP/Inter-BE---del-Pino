@@ -17,7 +17,10 @@ export async function getModule(courseID: number) : Promise<Module[]> {
         }
 
         const modulesList = modules.filter((m: Module) => m.courseId === courseID);
-
+        if (modulesList.length === 0) {
+            throw new Error(`No modules found for Course ID ${courseID}`);
+        }
+        
         return modulesList;
     } catch (error) {
         throw new Error('Failed to fetch courses');

@@ -4,59 +4,17 @@
         "title": "Introduction to Web Development",
         "description": "Learn the fundamentals of web development, covering HTML, CSS, and JavaScript.",
         "modules": [
-            {
-                "id": 1,
-                "title": "HTML Basics"
-            },
-            {
-                "id": 2,
-                "title": "CSS Fundamentals"
-            }
+            { "id": 1, "title": "HTML Basics" },
+            { "id": 2, "title": "CSS Fundamentals" }
         ]
     },
     {
         "id": 2,
-        "title": "Introduction to Web Development",
-        "description": "Learn the fundamentals of web development, covering HTML, CSS, and JavaScript.",
+        "title": "Advanced Web Development",
+        "description": "Dive deeper into JavaScript frameworks and advanced techniques.",
         "modules": [
-            {
-                "id": 1,
-                "title": "HTML Basics"
-            },
-            {
-                "id": 2,
-                "title": "CSS Fundamentals"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "title": "Introduction to Web Development",
-        "description": "Learn the fundamentals of web development, covering HTML, CSS, and JavaScript.",
-        "modules": [
-            {
-                "id": 1,
-                "title": "HTML Basics"
-            },
-            {
-                "id": 2,
-                "title": "CSS Fundamentals"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "title": "Introduction to Web Development",
-        "description": "Learn the fundamentals of web development, covering HTML, CSS, and JavaScript.",
-        "modules": [
-            {
-                "id": 1,
-                "title": "HTML Basics"
-            },
-            {
-                "id": 2,
-                "title": "CSS Fundamentals"
-            }
+            { "id": 3, "title": "JavaScript Advanced Concepts" },
+            { "id": 4, "title": "Working with APIs" }
         ]
     }
 ]

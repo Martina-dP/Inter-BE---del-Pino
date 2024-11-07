@@ -2,7 +2,7 @@ import { Router } from "express";
 
 const router = Router();
 
-router.get("/", );
+router.get("/:courseId/modules/:moduleId/lessons", );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons:
@@ -35,7 +35,7 @@ router.get("/", );
  *         description: " Failed to fetch Lessons "
  */
 
-router.get("/:lessonID" );
+router.get("/:courseId/modules/:moduleId/lessons/:lessonId" );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons/{lessonID}:
@@ -73,7 +73,7 @@ router.get("/:lessonID" );
  *         description: " Failed to fetch Lesson "
  */
 
-router.post("/" );
+router.post("/:courseId/modules/:moduleId/lessons" );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons:
@@ -111,7 +111,7 @@ router.post("/" );
  *         description: " Failed to fetch Lesson "
  */
 
-router.put("/:lessonID" );
+router.put("/:courseId/modules/:moduleId/lessons/:lessonId" );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons/{lessonID}:
@@ -147,7 +147,7 @@ router.put("/:lessonID" );
  *         description: " Failed to fetch Lesson "
  */
 
-router.delete("/:lessonID" );
+router.delete("/:courseId/modules/:moduleId/lessons/:lessonId" );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}/lessons/{lessonID}:
