@@ -23,7 +23,7 @@ export async function getModule(courseID: number) : Promise<Module[]> {
         
         return modulesList;
     } catch (error) {
-        throw new Error('Failed to fetch courses');
+        throw new Error('Failed to fetch modules');
     }
 }
 
@@ -48,7 +48,7 @@ export async function getModuleID(courseID: number, moduleID: number): Promise<M
 
         return currentModule;
     } catch (error) {
-        throw new Error(`Failed to fetch courses : ${error}`);
+        throw new Error(`Failed to fetch modules : ${error}`);
     }
 }
 
@@ -68,7 +68,7 @@ export async function postModule(courseID: number, newModule: Module) {
         await writeData(dataM, modules);
         return modules;
     } catch (error) {
-        throw new Error('Failed to fetch courses');
+        throw new Error('Failed to fetch modules');
     }
 }
 
@@ -90,7 +90,7 @@ export async function modifiedModule(courseID: number, moduleID: number, updateM
 
         return modifiedM
     } catch (error) {
-        throw new Error('Failed to fetch courses');
+        throw new Error('Failed to fetch modules');
     }
 }
 
@@ -114,6 +114,6 @@ export async function deleteModule(courseID: number, moduleID: number) {
         await writeData(dataC, deleted);
         return null
     } catch (error) {
-        throw new Error('Failed to fetch courses');
+        throw new Error('Failed to fetch modules');
     }
 }

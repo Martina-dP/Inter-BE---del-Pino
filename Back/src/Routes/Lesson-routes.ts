@@ -1,8 +1,9 @@
 import { Router } from "express";
+import { getAllLessons, getOneLesson, newLesson, removeLesson, updateLesson } from "../Middleware/lessonsM";
 
 const router = Router();
 
-router.get("/:courseId/modules/:moduleId/lessons", );
+router.get("/:courseId/modules/:moduleId/lessons", getAllLessons);
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons:
@@ -30,12 +31,12 @@ router.get("/:courseId/modules/:moduleId/lessons", );
  *                type: array
  *                $ref: '#/components/schemas/Lesson'  
  *       404:
- *         description: " Lessons not found "
+ *         description: 'Not found' 
  *       500:
  *         description: " Failed to fetch Lessons "
  */
 
-router.get("/:courseId/modules/:moduleId/lessons/:lessonId" );
+router.get("/:courseId/modules/:moduleId/lessons/:lessonId", getOneLesson);
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons/{lessonID}:
@@ -73,7 +74,7 @@ router.get("/:courseId/modules/:moduleId/lessons/:lessonId" );
  *         description: " Failed to fetch Lesson "
  */
 
-router.post("/:courseId/modules/:moduleId/lessons" );
+router.post("/:courseId/modules/:moduleId/lessons", newLesson );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons:
@@ -106,12 +107,16 @@ router.post("/:courseId/modules/:moduleId/lessons" );
  *           application/json:
  *             schema:
  *                type: array
- *                $ref: '#/components/schemas/Lesson'  
+ *                $ref: '#/components/schemas/Lesson'
+ *       404:
+ *         description: 'Not found' 
+ *       400:
+ *         description: 'Incomplete data'
  *       500:
  *         description: " Failed to fetch Lesson "
  */
 
-router.put("/:courseId/modules/:moduleId/lessons/:lessonId" );
+router.put("/:courseId/modules/:moduleId/lessons/:lessonId", updateLesson );
 /**
  * @swagger
  * /courses/{courseId}/modules/{moduleId}/lessons/{lessonID}:
@@ -143,11 +148,13 @@ router.put("/:courseId/modules/:moduleId/lessons/:lessonId" );
  *             schema:
  *                type: array
  *                $ref: '#/components/schemas/Lesson'  
+ *       404:
+ *         description: 'Not found' 
  *       500:
  *         description: " Failed to fetch Lesson "
  */
 
-router.delete("/:courseId/modules/:moduleId/lessons/:lessonId" );
+router.delete("/:courseId/modules/:moduleId/lessons/:lessonId", removeLesson );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}/lessons/{lessonID}:
@@ -176,6 +183,8 @@ router.delete("/:courseId/modules/:moduleId/lessons/:lessonId" );
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Lesson'  
+ *       404:
+ *         description: 'Not found' 
  *       500:
  *         description: "Error deleting lesson"
  */
