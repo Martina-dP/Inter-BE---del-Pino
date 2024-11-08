@@ -52,32 +52,47 @@ export async function getModuleID(courseID: number, moduleID: number): Promise<M
     }
 }
 
-// export async function postCourse(newCourse: Module) {
-//     try {
-//         const courses = await readData(dataM);
-//         newCourse.id = courses.length + 1; 
-//         courses.push(newCourse);
-//         await writeData(dataM, courses);
-//         return newCourse;
-//     } catch (error) {
-//         throw new Error('Failed to fetch courses');
-//     }
-// }
+export async function postModule(courseID: number, newModule: Module) {
+    try {
+        const courses= await readData(dataC);
+        const modules= await readData(dataM);
 
-// export async function modifiedCourse(courseID: number, updateCourse: Module) {
-//     try {
-//         const courses = await readData(dataM);
-//         const indexC = courses.find((c: Module) => c.id === courseID || undefined)
+        const currentCourse = courses.find((c: Course) => c.id === courseID);
 
-//         const modifiedC = { ...courses[indexC], updateCourse}
-//         courses[indexC] = modifiedC
-//         await writeData(dataM, courses);
+        if (!currentCourse) {
+            throw new Error(`Course with ID ${courseID} not found`);
+        }
 
-//         return modifiedC
-//     } catch (error) {
-//         throw new Error('Failed to fetch courses');
-//     }
-// }
+        newModule.id = modules.length + 1; 
+        modules.push(newModule);
+        await writeData(dataM, modules);
+        return modules;
+    } catch (error) {
+        throw new Error('Failed to fetch courses');
+    }
+}
+
+export async function modifiedModule(courseID: number, moduleID: number, updateModule: Module) {
+    try {
+        const courses = await readData(dataC);
+        const modules= await readData(dataM);
+
+        const currentC = courses.find((c: Module) => c.id === courseID || undefined)
+        if (!currentC) {
+            throw new Error(`Course with ID ${courseID} not found`);
+        }
+
+        const currentM = modules.find((m: Module) => m.courseId === courseID && m.id === moduleID);
+
+        const modifiedM = { ...modules[currentM], updateModule}
+        modules[currentM] = modifiedM
+        await writeData(dataM, modules);
+
+        return modifiedM
+    } catch (error) {
+        throw new Error('Failed to fetch courses');
+    }
+}
 
 export async function deleteModule(courseID: number, moduleID: number) {
     try {

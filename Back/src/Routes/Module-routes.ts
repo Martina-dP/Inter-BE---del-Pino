@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteModuleId, getAllModules, getCourseID } from "../Middleware/moduleM";
+import { addModule, deleteModuleId, getAllModules, getCourseID, updateModule } from "../Middleware/moduleM";
 
 const router = Router();
 
@@ -64,7 +64,7 @@ router.get("/:courseId/modules/:moduleId", getCourseID );
  *         description: " Failed to fetch courses "
  */
 
-router.post("/:courseId/modules" );
+router.post("/:courseId/modules", addModule );
 /**
  * @swagger
  * /course/{courseID}/modules:
@@ -99,7 +99,7 @@ router.post("/:courseId/modules" );
  *         description:  " Failed to fetch courses "
  */
 
-router.put("/:courseId/modules/:moduleId" );
+router.put("/:courseId/modules/:moduleId", updateModule );
 /**
  * @swagger
  * /course/{courseID}/modules/{moduleID}:

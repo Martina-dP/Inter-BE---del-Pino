@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { deleteCourse, getCourses, getCoursesID, modifiedCourse } from "../Services/courseService";
+import { deleteCourse, getCourses, getCoursesID, modifiedCourse, postCourse } from "../Services/courseService";
 
 export const getAllCourses = async (_req: Request, res: Response) => {
     try {
@@ -25,7 +25,13 @@ export const getCourseID = async (req: Request, res: Response): Promise<void> =>
 
 export const newCourse = async (req: Request, res: Response) => {
     try {
-        const newCourse = req.body;  
+        const { title, modules, description } = req.body;
+
+        if (!title || !Array.isArray(modules) || description) {
+            res.status(400).json({ error: 'Datos del módulo incompletos' });
+        }
+
+        const newCourse = postCourse(req.body)
         res.status(201).json(newCourse);  
     } catch (error) {
         res.status(500).json({ error: "Error al crear el curso" });
